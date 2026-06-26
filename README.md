@@ -8,17 +8,16 @@ pyr is a fully offline, air-gapped AI synthesis platform for generating producti
 
 ## What it does
 
-- `app.py` provides an interactive web dashboard for entering requirements, attaching reference files (for design system and architecture mirroring), and generating a **compiled prompt** envelope.
-- `runner.py` ingests the compiled payload, executes local `.gguf` AI models entirely offline via `llama-cpp-python`, writes files into `sandbox_outputs/<project_name>`, and validates generated code with autonomous self-repair.
-- `e2e_runner.py` is a convenience driver that runs the entire end-to-end cycle and prints the audit summary.
+- Provides an interactive web dashboard for entering requirements, attaching reference files (for design system and architecture mirroring), and generating a **compiled prompt** envelope.
+- Ingests the compiled payload, executes local `.gguf` AI models entirely offline via `llama-cpp-python`, writes files into `sandbox_outputs/<project_name>`, and validates generated code with autonomous self-repair.
+- Is a convenience driver that runs the entire end-to-end cycle and prints the audit summary.
 
 ## Requirements
 
 - Python 3.11+ (tested in the local workspace with Python 3.14)
 - A local `.gguf` AI model file (e.g., `gemma4-12b.gguf`, `qwen2.5-7b-instruct.gguf`, or `gemma-2-9b-it.gguf`) placed directly in the `models/` directory.
 - Included `gemma4:12b` in models directory.
-- Copy `cred.env.example` to `cred.env` and set strong `FLASK_SECRET_KEY` / `JWT_SECRET` values (32+ chars).
-- Install runtime dependencies with `pip install -r requirements.txt`
+
 
 ## Running the Web Dashboard
 
@@ -82,11 +81,6 @@ Use `?project=<name>` to target a specific project directory, or omit it to fetc
 2. Copy this Machine ID and paste it into your purchase portal receipt page to instantly generate your **Offline Unlock Key**.
 3. Paste the Unlock Key into `pyr` to permanently unlock the application on your workstation.
 
-### For Sellers / MoR Integration
-To generate license keys for your customers, run `offline_licensing.py` directly from your command line or link it to your MoR webhook (Lemon Squeezy/Paddle):
-```bash
-python offline_licensing.py <CUSTOMER_HARDWARE_ID>
-```
 
 ## 🤖 How to Add or Upgrade AI Models
 
