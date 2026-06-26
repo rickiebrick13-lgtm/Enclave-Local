@@ -80,6 +80,7 @@ Use `?project=<name>` to target a specific project directory, or omit it to fetc
 1. On your very first launch, `pyr` will calculate a unique **Machine ID** (e.g., `PYR-9A4B-22F1-807C`) derived from your motherboard and CPU hardware signatures.
 2. Copy this Machine ID and paste it into your purchase portal receipt page to instantly generate your **Offline Unlock Key**.
 3. Paste the Unlock Key into `pyr` to permanently unlock the application on your workstation.
+4. The default username and passwords would spin up in the terminal.
 
 
 ## 🤖 How to Add or Upgrade AI Models
