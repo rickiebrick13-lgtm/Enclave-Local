@@ -95,7 +95,7 @@ Use `?project=<name>` to target a specific project directory, or omit it to fetc
 9. Now advanced runner config, select your model, and context windows with max output tokens, each setting has a recommended RAM/VRAM tooltip 
 <img width="1208" height="594" alt="image" src="https://github.com/user-attachments/assets/ddfc7715-89e6-48f3-b54c-afd1b6092398" />
 
-10. Inference timeout is literally how much time you give for the model to work, note: if using staged pipeline, it will multiply by number of stages, but may or may not use up the time given 
+10. Inference timeout is literally how much time you give for the model to work, generally the default settings work just fine, too short timings will truncate the outputs, note: if using staged pipeline, it will multiply by number of stages, but may or may not use up the time given 
 
 11. Test timeout is for the testing of full stack code generated 
 
