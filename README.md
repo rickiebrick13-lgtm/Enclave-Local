@@ -12,10 +12,6 @@ Enclave-Local is a fully offline, air-gapped AI synthesis platform for generatin
 # History 
 The original premise was to reduce token costs by writing an optimiser filled with semantic checking, AST validation and hard coded guardrails then pasting that into the frontier AI models, after, it evolved by attaching a local SLM/LLM for local generation. 
 
-# Enclave-Local
-
-`Enclave-Local` is a fully offline, self-contained AI synthesis platform for generating production-ready codebases, multi-stage microservices, and native PowerPoint presentations (`.pptx`) from optimized prompts.
-
 ## What it does
 
 - Provides an interactive web dashboard for entering requirements, attaching reference files (for design system and architecture mirroring), and generating a **compiled prompt** envelope.
