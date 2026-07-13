@@ -4,7 +4,9 @@ https://buy.stripe.com/4gM4gsbwd0Hv2Tg6ZN9R600
 Enclave-Local is a fully offline, air-gapped AI synthesis platform for generating production-ready codebases and native PowerPoint presentations without cloud API connections.
 
 ## Main features 
-
+- Provides an interactive web dashboard for entering requirements, attaching reference files (for design system and architecture mirroring), and generating a **compiled prompt** envelope.
+- Ingests the compiled payload, executes local `.gguf` AI models entirely offline via `llama-cpp-python`, writes files into `sandbox_outputs/<project_name>`, and validates generated code with autonomous self-repair.
+- Is a convenience driver that runs the entire end-to-end cycle and prints the audit summary.
 - The system uses a strict JSON schema prompt template in `app.py` to reduce output ambiguity.
 - `runner.py` performs AST validation, an optional test run, and an auto-repair loop when tests fail.
 - If the runner fails, inspect `sandbox_outputs/runner.log` and `sandbox_outputs/raw_fault_payload.txt` first.
@@ -12,15 +14,17 @@ Enclave-Local is a fully offline, air-gapped AI synthesis platform for generatin
 # History 
 The original premise was to reduce token costs by writing an optimiser filled with semantic checking, AST validation and hard coded guardrails then pasting that into the frontier AI models, after, it evolved by attaching a local SLM/LLM for local generation. 
 
-## What it does
+## Requirements & Hardware Compatibility
 
-- Provides an interactive web dashboard for entering requirements, attaching reference files (for design system and architecture mirroring), and generating a **compiled prompt** envelope.
-- Ingests the compiled payload, executes local `.gguf` AI models entirely offline via `llama-cpp-python`, writes files into `sandbox_outputs/<project_name>`, and validates generated code with autonomous self-repair.
-- Is a convenience driver that runs the entire end-to-end cycle and prints the audit summary.
+Enclave Local is architected for extreme resource efficiency, allowing it to execute local synthesis loops even on low-spec, commodity consumer hardware ("potato class" machines) without requiring enterprise-grade server infrastructure.
 
-## Requirements
-
-- Included `gemma4:12b` in models directory.
+* **Minimum Configuration:** 
+  * Compiles and executes on standard quad-core consumer CPUs.
+  * Runs entirely within a ~16GB system RAM boundary using aggressive `.gguf` quantization layers.
+* **Hardware Accelerators:** Includes specialized, pre-compiled runtime profiles for:
+  * **NVIDIA:** Native CUDA acceleration.
+  * **AMD:** Native ROCm execution.
+  * **CPU Fallback:** Optimized vectorization matrices for headless or legacy environments lacking a dedicated GPU.
 
 
 ## Audit output
