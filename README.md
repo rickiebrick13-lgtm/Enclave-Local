@@ -1,14 +1,20 @@
 ## 🚀 Purchase Your Permanent Offline License
 https://buy.stripe.com/4gM4gsbwd0Hv2Tg6ZN9R600
-# Enclave Local (pyr-AI-Enterprise)
-pyr is a fully offline, air-gapped AI synthesis platform for generating production-ready codebases and native PowerPoint presentations without cloud API connections.
+# Enclave Local
+Enclave-Local is a fully offline, air-gapped AI synthesis platform for generating production-ready codebases and native PowerPoint presentations without cloud API connections.
 
-# About the original name (pyr)
-It was a random selection of letters chosen, considering it uses python mainly, the original premise was to reduce token costs by writing an optimiser filled with semantic checking, AST validation and hard coded guardrails then pasting that into the frontier AI models, after, it evolved by attaching a local SLM/LLM and training that. Below, is how the app was setup. Now that it's released, I do not expect anything, but paying a one-time fee, and running the local offline models whether it be the default, or one of your choice loaded into the /models folder, it will certainly cut down on token costs.
+## Main features 
 
-# pyr-AI-Enterprise
+- The system uses a strict JSON schema prompt template in `app.py` to reduce output ambiguity.
+- `runner.py` performs AST validation, an optional test run, and an auto-repair loop when tests fail.
+- If the runner fails, inspect `sandbox_outputs/runner.log` and `sandbox_outputs/raw_fault_payload.txt` first.
 
-`pyr-AI-Enterprise` is a fully offline, self-contained AI synthesis platform for generating production-ready codebases, multi-stage microservices, and native PowerPoint presentations (`.pptx`) from optimized prompts.
+# History 
+The original premise was to reduce token costs by writing an optimiser filled with semantic checking, AST validation and hard coded guardrails then pasting that into the frontier AI models, after, it evolved by attaching a local SLM/LLM for local generation. 
+
+# Enclave-Local
+
+`Enclave-Local` is a fully offline, self-contained AI synthesis platform for generating production-ready codebases, multi-stage microservices, and native PowerPoint presentations (`.pptx`) from optimized prompts.
 
 ## What it does
 
@@ -42,27 +48,21 @@ The Flask app also exposes a runner audit endpoint:
 
 Use `?project=<name>` to target a specific project directory, or omit it to fetch the most recent audit.
 
-## Notes
-
-- The system uses a strict JSON schema prompt template in `app.py` to reduce output ambiguity.
-- `runner.py` performs AST validation, an optional test run, and an auto-repair loop when tests fail.
-- If the runner fails, inspect `sandbox_outputs/runner.log` and `sandbox_outputs/raw_fault_payload.txt` first.
-
 ## 💼 Commercial Offline Licensing & Activation
 
-`pyr-AI-Enterprise` is built for maximum air-gap security and operates entirely offline without making external internet calls or license verification pings.
+Enclave-Local is built for maximum air-gap security and operates entirely offline without making external internet calls or license verification pings.
 The zip file is ~20GB in size, within, there are specific folders for different GPU vendors, NVIDIA, AMD, and CPU version as a fallback
 
 ### For Users (Unlocking Your Copy)
-1. On your very first launch, `pyr-AI-Enterprise` will calculate a unique **Machine ID** (e.g., `PYR-9A4B-22F1-807C`) derived from your motherboard and CPU hardware signatures.
+1. On your very first launch, Enclave-Local will calculate a unique **Machine ID** (e.g., `PYR-9A4B-22F1-807C`) derived from your motherboard and CPU hardware signatures.
 2. Copy this Machine ID and paste it into your purchase portal receipt page to instantly generate your **Offline Unlock Key**.
-3. Paste the Unlock Key into `pyr-AI-Enterprise` to permanently unlock the application on your workstation.
+3. Paste the Unlock Key into Enclave-Local to permanently unlock the application on your workstation.
 4. The default username and passwords would spin up in the terminal. admin/admin123 if totally lost.
 
 
 ## 🤖 How to Add or Upgrade AI Models
 
-`pyr-AI-Enterprise` is a 100% offline application and will never connect to the internet to download AI model files automatically. To add or upgrade models for your local engine:
+Enclave-Local is a 100% offline application and will never connect to the internet to download AI model files automatically. To add or upgrade models for your local engine:
 
 1. **Download a Model:** Visit HuggingFace in your web browser and download any `.gguf` formatted model file (we highly recommend `Qwen2.5-7B-Instruct.gguf` or `Gemma-2-9B-It.gguf`).
 2. **Drop into Models Folder:** Open your `pyr` application directory and move the downloaded `.gguf` file directly into the `models/` folder.
